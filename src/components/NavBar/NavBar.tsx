@@ -1,19 +1,14 @@
-import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, HStack, Image, Text } from "@chakra-ui/react";
 import logo from "../../assets/icon.png";
+import ColourModeSwitch from "../ColourModeSwitch";
 
-interface Props {
-  onDarkmodeClick: () => void;
-}
-
-function NavBar({ onDarkmodeClick }: Props) {
+function NavBar() {
   return (
     <HStack>
       <Image src={logo} boxSize="60px"></Image>
       <Text>MIIM Inc.</Text>
       <Box margin="auto"></Box>
-      <Button colorPalette="teal" onClick={onDarkmodeClick}>
-        Dark Mode
-      </Button>
+      <ColourModeSwitch></ColourModeSwitch>
     </HStack>
   );
 }
