@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <HStack>
       <Image src={logo} boxSize="60px"></Image>
-      <Text>MIIM Inc.</Text>
+      <Text>MITM Inc.</Text>
       <Box margin="auto"></Box>
       <ColourModeSwitch></ColourModeSwitch>
     </HStack>
