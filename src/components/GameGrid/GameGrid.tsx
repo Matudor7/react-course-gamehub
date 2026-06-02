@@ -1,44 +1,23 @@
-import { useEffect, useState } from "react";
-import apiClient from "../../services/api-client";
-import { Spinner, Text } from "@chakra-ui/react";
-
-interface Game {
-  id: number;
-  name: string;
-}
-
-interface FetchGamesResponse {
-  count: number;
-  results: Game[];
-}
+import useGames from "../../hooks/useGames";
+import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import GameCard from "../GameCard";
 
 function GameGrid() {
-  const [games, setGames] = useState<Game[]>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    apiClient
-      .get<FetchGamesResponse>("/games")
-      .then((res) => {
-        setGames(res.data.results);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
+  const { games, error, isLoading } = useGames();
   return (
     <>
       <Text>{error}</Text>
-      <ul>
+      <SimpleGrid
+        columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
+        gap="40px"
+        p="10px"
+        justifyItems="center"
+      >
         {isLoading && <Spinner size="sm" />}
         {games.map((game) => (
-          <li key={game.id}>{game.name}</li>
+          <GameCard key={game.id} game={game}></GameCard>
         ))}
-      </ul>
+      </SimpleGrid>
     </>
   );
 }

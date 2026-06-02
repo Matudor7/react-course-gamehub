@@ -5,7 +5,16 @@ import ColourModeSwitch from "../ColourModeSwitch";
 function NavBar() {
   return (
     <HStack>
-      <Image src={logo} boxSize="60px"></Image>
+      <Box
+        boxSize="60px"
+        overflow="hidden"
+        borderRadius="md"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Image src={logo}></Image>
+      </Box>
       <Text>MITM Inc.</Text>
       <Box margin="auto"></Box>
       <ColourModeSwitch></ColourModeSwitch>
