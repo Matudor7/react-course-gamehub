@@ -10,7 +10,7 @@ interface Props {
 
 function GameCard({ game }: Props) {
   return (
-    <Card.Root bg="card_border" borderWidth={0} overflow="hidden">
+    <Card.Root bg="card_border" borderWidth={0}>
       <Card.Header p={0}>
         <Image
           src={getCroppedImageUrl(game.background_image)}

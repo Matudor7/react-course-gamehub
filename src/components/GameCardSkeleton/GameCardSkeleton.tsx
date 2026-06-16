@@ -2,9 +2,9 @@ import { Card, Skeleton, SkeletonText } from "@chakra-ui/react";
 
 function GameCardSkeleton() {
   return (
-    <Card.Root bg="skeleton" borderWidth={0} width="200px" overflow="hidden">
+    <Card.Root bg="skeleton" borderWidth={0}>
       <Card.Header p={0}>
-        <Skeleton bg="card_border" height="200px" objectFit="cover" />
+        <Skeleton bg="card_border" height="200px" />
       </Card.Header>
       <Card.Body gap="2">
         <Card.Title>
