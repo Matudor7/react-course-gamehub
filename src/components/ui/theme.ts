@@ -34,6 +34,12 @@ const config = defineConfig({
                         _dark: "#33333a"
                     }
                 },
+                skeleton:{
+                    value:{
+                        base: "#f4f4f5",
+                        _dark: "#26262b"
+                    }
+                },
                 primary:{
                     value:{
                         base: "#0d9488",

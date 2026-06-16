@@ -1,9 +1,11 @@
 import useGames from "../../hooks/useGames";
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import GameCard from "../GameCard";
+import GameCardSkeleton from "../GameCardSkeleton";
 
 function GameGrid() {
   const { games, error, isLoading } = useGames();
+  const skeletons = [1, 2, 3, 4, 5, 6];
   return (
     <>
       <Text>{error}</Text>
@@ -13,7 +15,10 @@ function GameGrid() {
         p="10px"
         justifyItems="center"
       >
-        {isLoading && <Spinner size="sm" />}
+        {isLoading &&
+          skeletons.map((skeleton) => (
+            <GameCardSkeleton key={skeleton}></GameCardSkeleton>
+          ))}
         {games.map((game) => (
           <GameCard key={game.id} game={game}></GameCard>
         ))}
