@@ -6,11 +6,7 @@ interface Props {
 }
 
 function GameCardContainer({ children }: Props) {
-  return (
-    <Box width="100%" overflow="hidden">
-      {children}
-    </Box>
-  );
+  return <Box overflow="hidden">{children}</Box>;
 }
 
 export default GameCardContainer;

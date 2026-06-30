@@ -12,9 +12,8 @@ function GameGrid() {
       <Text>{error}</Text>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
-        gap="40px"
-        p="10px"
-        justifyItems="center"
+        padding="10px"
+        gap={3}
       >
         {isLoading &&
           skeletons.map((skeleton) => (
