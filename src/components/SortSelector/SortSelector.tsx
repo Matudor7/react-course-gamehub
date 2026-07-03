@@ -12,7 +12,7 @@ function SortSelector({ onSelectSortOrder, sortOrder }: Props) {
     { value: "-added", label: "Date Added" },
     { value: "name", label: "Name" },
     { value: "-released", label: "Release Date" },
-    { value: "-metacritic", label: "Popularity" },
+    { value: "-updated", label: "Lastly Updated" },
     { value: "-rating", label: "Average Rating" },
   ];
 
@@ -35,6 +35,7 @@ function SortSelector({ onSelectSortOrder, sortOrder }: Props) {
                 onClick={() => onSelectSortOrder(order.value)}
                 key={order.value}
                 value={order.value}
+                _hover={{ bg: "card_border" }}
               >
                 {order.label}
               </Menu.Item>

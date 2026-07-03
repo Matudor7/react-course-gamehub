@@ -22,11 +22,8 @@ function ColourModeSwitch() {
         </Switch.Control>
         <Switch.Label />
       </Switch.Root>
-      <Text>
-        {" "}
-        {colorMode === "dark"
-          ? "Switch to Light Mode"
-          : "Switch to Dark Mode"}{" "}
+      <Text whiteSpace="nowrap">
+        {colorMode === "dark" ? "Dark Mode" : "Light Mode"}
       </Text>
     </HStack>
   );
