@@ -10,6 +10,8 @@ interface Props {
 
 function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   const { data, error } = usePlatforms();
+  //For some reason, the parent platforms API endpoint also supports some non-parent consoles
+  //Thus they need to be manually filtered out.
   const ALLOWED_PARENT_PLATFORMS = [
     "pc",
     "playstation",
