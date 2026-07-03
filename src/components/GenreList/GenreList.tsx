@@ -19,7 +19,7 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
   if (error) return null;
 
   return (
-    <List.Root>
+    <List.Root listStyleType="none">
       {isLoading &&
         skeletons.map((skeleton) => (
           <List.Item key={skeleton}>

@@ -13,6 +13,7 @@ interface Props {
 function GameGrid({ selectedGenre, selectedPlatform }: Props) {
   const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
   const skeletonCount = 10;
+  if (!isLoading) console.log(data);
   const skeletons = Array.from(
     { length: skeletonCount },
     (_, index) => index + 1,
