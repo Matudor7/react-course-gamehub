@@ -10,23 +10,6 @@ interface Props {
 
 function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   const { data, error } = usePlatforms();
-  //For some reason, the parent platforms API endpoint also supports some non-parent consoles
-  //Thus they need to be manually filtered out.
-  const ALLOWED_PARENT_PLATFORMS = [
-    "pc",
-    "playstation",
-    "xbox",
-    "nintendo",
-    "ios",
-    "android",
-    "linux",
-    "mac",
-    "web",
-  ];
-
-  const filteredData = data.filter((p) =>
-    ALLOWED_PARENT_PLATFORMS.includes(p.slug),
-  );
 
   if (error) return null;
   return (
@@ -40,7 +23,7 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
       <Portal>
         <Menu.Positioner>
           <Menu.Content bg="bg">
-            {filteredData.map((parent_platform) => (
+            {data.map((parent_platform) => (
               <Menu.Item
                 key={parent_platform.id}
                 value={parent_platform.slug}
