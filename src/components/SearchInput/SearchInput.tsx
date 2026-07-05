@@ -28,6 +28,7 @@ function SearchInput({ onSearch }: Props) {
                 onClick={() => {
                   if (ref.current && ref.current.value !== "") {
                     ref.current.value = "";
+                    onSearch(ref.current.value);
                   }
                 }}
               >
@@ -37,11 +38,11 @@ function SearchInput({ onSearch }: Props) {
           }
         >
           <Input
+            bg="card_border"
             ref={ref}
             placeholder="Search Games"
             variant="subtle"
             borderRadius={20}
-            borderColor="card_border"
           ></Input>
         </InputGroup>
       </Box>

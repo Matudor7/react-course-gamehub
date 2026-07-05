@@ -13,7 +13,7 @@ const config = defineConfig({
                 bg:{
                     value:{
                         base: "#f7fafc", //Light Mode
-                        _dark:"#18181b" //Dark Mode
+                        _dark:"#121212" //Dark Mode
                     }
                 },
                 text:{
@@ -31,13 +31,13 @@ const config = defineConfig({
                 card_border:{
                     value:{
                         base: "#e8e8ee",
-                        _dark: "#33333a"
+                        _dark: "#262626"
                     }
                 },
                 skeleton:{
                     value:{
                         base: "#f4f4f5",
-                        _dark: "#26262b"
+                        _dark: "#404040"
                     }
                 },
                 primary:{
