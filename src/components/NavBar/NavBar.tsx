@@ -18,7 +18,7 @@ function NavBar({ onSearch }: Props) {
       >
         <Image src={logo}></Image>
       </Box>
-      <Text>MITM Inc.</Text>
+      <Text fontWeight="bold">MITM Inc.</Text>
       <SearchInput onSearch={onSearch}></SearchInput>
       <ColourModeSwitch></ColourModeSwitch>
     </HStack>
